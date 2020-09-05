@@ -13,5 +13,5 @@ If result is empty: referenced collection is identical or more complete than mat
 If less than 300 unique files found: press **SAVE THUMBNAILS** to create window screenshot with previews or **EXPORT** to copy listed files in new folder within application directory.
 
 
-# ---
+# 
 *Developed using Godot 3.2.2 © https://godotengine.org/*
