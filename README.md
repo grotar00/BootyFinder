@@ -11,7 +11,7 @@ To complete *"__HASHES_NEW.txt"* with new entries, press **ADD* button. Existing
 * To start a new **SCAN**, make sure you have MD5 reference list *"__HASHES.txt"* located in application directory, enter path to a main folder in a text field and press **SCAN**. Please note that application may *stop responding* when processing more than 500 files. It may take more than a minute but application will be terminated if anything pressed during this state.
 If result is empty: referenced collection is identical or more complete than matching one.
 If less than 300 unique files found: press **SAVE THUMBNAILS** to create window screenshot with previews or **EXPORT** to copy listed files in new folder within application directory.
- 
- 
- 
+
+
+# ---
 *Developed using Godot 3.2.2 © https://godotengine.org/*
