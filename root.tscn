@@ -1,0 +1,224 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://root.gd" type="Script" id=1]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://NotoSans-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=4]
+default_font = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Panel" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 140.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scan" type="Button" parent="Start"]
+modulate = Color( 1, 1.5, 1, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 130.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "SCAN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IO" type="Panel" parent="."]
+margin_left = 145.0
+margin_top = 5.0
+margin_right = 1130.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Open" type="Button" parent="IO"]
+margin_left = 140.0
+margin_top = 5.0
+margin_right = 205.0
+margin_bottom = 25.0
+text = "OPEN :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="IO"]
+margin_left = 210.0
+margin_right = 905.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+secret_character = "█"
+clear_button_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paste" type="Button" parent="IO"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 135.0
+margin_bottom = 25.0
+text = "FROM CLIPBOARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subs" type="CheckBox" parent="IO"]
+margin_left = 904.0
+margin_right = 984.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "Subfolders"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Panel" parent="."]
+margin_left = 145.0
+margin_top = 40.0
+margin_right = 1130.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info"]
+margin_left = 215.0
+margin_top = 8.0
+margin_right = 980.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="Button" parent="Info"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 135.0
+margin_bottom = 25.0
+hint_tooltip = "Create window screenshot within application directory"
+disabled = true
+text = "SAVE PREVIEWS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Export" type="Button" parent="Info"]
+margin_left = 140.0
+margin_top = 5.0
+margin_right = 205.0
+margin_bottom = 25.0
+hint_tooltip = "Duplicate found unique images to _BOOTY folder within application directory"
+disabled = true
+text = "EXPORT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thumbnails" type="Panel" parent="."]
+margin_left = 5.0
+margin_top = 75.0
+margin_right = 1195.0
+margin_bottom = 715.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="Thumbnails"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1185.0
+margin_bottom = 635.0
+mouse_filter = 1
+
+[node name="Reference" type="Panel" parent="."]
+margin_left = 1135.0
+margin_top = 5.0
+margin_right = 1195.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Reference"]
+margin_left = 5.0
+margin_right = 57.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 3 )
+text = "Reference"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New" type="Button" parent="Reference"]
+modulate = Color( 1.2, 1, 0.8, 1 )
+margin_left = 5.0
+margin_top = 16.0
+margin_right = 55.0
+margin_bottom = 36.0
+hint_tooltip = "Generate '__HASHES_NEW.txt'
+file listing MD5 of all images
+within current and child folders"
+text = "NEW"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="Button" parent="Reference"]
+modulate = Color( 1.2, 1, 0.8, 1 )
+margin_left = 5.0
+margin_top = 40.0
+margin_right = 55.0
+margin_bottom = 60.0
+hint_tooltip = "Add MD5 of all images within
+current and child folders to
+existing '__HASHES_NEW.txt'
+file or create a new one"
+text = "ADD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 95.0
+margin_top = 50.0
+margin_right = 575.0
+margin_bottom = 530.0
+theme = SubResource( 4 )
+custom_colors/folder_icon_modulate = Color( 0.486275, 1, 0.396078, 1 )
+custom_colors/files_disabled = Color( 0.380392, 0.380392, 0.380392, 1 )
+window_title = "Открыть каталог"
+mode = 2
+access = 2
+current_dir = "D:/Myrmex/Documents/Booty Finder"
+current_path = "D:/Myrmex/Documents/Booty Finder/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
